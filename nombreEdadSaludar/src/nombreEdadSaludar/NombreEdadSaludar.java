@@ -8,8 +8,8 @@ public class NombreEdadSaludar {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Hola, ingresas tu nombre, y los años que tienes:");
-		String nombre = input.next();
-		int edad = input.nextInt();
+		String nombre = input.nextLine();
+		byte edad = input.nextByte();
 		
 		System.out.println("Hola " + nombre + ", espero te encuentres muy bien, me he enterado que tienes " + edad + " años y pienso que eso hay que celebrarlo.");
 	}
