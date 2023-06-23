@@ -1,3 +1,5 @@
+// Cálculo del promedio de números flotantes usando clases
+
 package promedioClases;
 
 import java.util.Scanner;
