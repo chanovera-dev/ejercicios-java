@@ -61,7 +61,7 @@ public static void main(String[] args) {
 		System.out.println("La suma de " + num1Format + " más " + num2Format + " es " + sumaFormat + ".");
 		System.out.println("La resta de " + num1Format + " menos " + num2Format + " es " + restaFormat + ".");
 		System.out.println("La multiplicación de " + num1Format + " por " + num2Format + " es " + multiplicacionFormat + ".");
-		System.out.println("La división de " + num1Format + " entre " + num2Format + " es " + divisionFormat + ".");
+		System.out.println("La división de " + num1Format + " entre " + num2Format + " es " + divisionFormat + "."); 
 	}
 
 	private double division(double num1, double num2) {
