@@ -22,10 +22,9 @@ public class CalcularNomina {
 		nomina1.operaciones();
 		
 		System.out.println(
-				"\nEl nombre del empleado es " + empleado1.getNombre() + ", su puesto es " + empleado1.getPuesto() + ", esta quincena tuvo " + nomina1.getHorasNomina() + " horas en nómina y " + nomina1.getHorasExtras() + " horas extras.\n"
-				+ "De acuerdo a sus horas trabajadas, su sueldo bruto es de $" + nomina1.getNomina() + " y le toca pagar $" + nomina1.getImpuestos() + " por concepto de impuestos.\n"
-				+ "Su sueldo neto es de $" + nomina1.getNominaNeta() + ".");
-		
+				"\nEl nombre del empleado es " + empleado1.getNombre() + ", su puesto es " + empleado1.getPuesto() + ", esta quincena tuvo " + nomina1.getHorasNominaDecimal() + " horas en nómina y " + nomina1.getHorasExtrasDecimal() + " horas extras.\n"
+				+ "De acuerdo a sus horas trabajadas, su sueldo bruto es de $" + nomina1.getNominaMoneda() + " y le toca pagar $" + nomina1.getImpuestosMoneda() + " por concepto de impuestos.\n"
+				+ "Su sueldo neto es de $" + nomina1.getNominaNetaMoneda() + ".");
 	}
 
 }
