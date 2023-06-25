@@ -6,7 +6,7 @@ public class Main {
 		
 		Monedas monedas = new Monedas();
 		
-		System.out.println("\"Bienvenido a su programa de conversión de monedas, puede convertir entre soles, pesos, dólares y quetzales.\\n\\n\"");
+		System.out.println("Bienvenido a su programa de conversión de monedas, puede convertir entre soles, pesos, dólares y quetzales.\n");
 		
 		monedas.obtenerDatos();
 		
