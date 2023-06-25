@@ -99,7 +99,7 @@ public class Monedas {
 			}
 		}
 		
-		System.out.print("\n¿Cuántos " + moneda1 + " tienes? ");
+		System.out.print("¿Cuántos " + moneda1 + " tienes? ");
 		cantidadConvertir = input.nextDouble();
 		monedas.setCantidadConvertir(cantidadConvertir);
 		
