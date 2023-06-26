@@ -180,6 +180,14 @@ public class Monedas {
 		return resultado;
 	}
 	
+	public String getCantidadConvertirMoneda() {
+        return cantidadConvertirMoneda.format(cantidadConvertir);
+    }
+	
+	public String getResultadoMoneda() {
+        return resultadoMoneda.format(resultado);
+    }
+	
 	// método set
 	private void setTipoMoneda1(int tipoMoneda1) {
 		this.tipoMoneda1 = tipoMoneda1;
@@ -201,10 +209,6 @@ public class Monedas {
 		this.cantidadConvertir = cantidadConvertir; 
 	}
 	
-	public String getCantidadConvertirMoneda() {
-        return cantidadConvertirMoneda.format(cantidadConvertir);
-    }
-	
 	private void setPaso1(double paso1) {
 		this.paso1 = paso1;
 	}
@@ -212,8 +216,5 @@ public class Monedas {
 	private void setResultado(double resultado) {
 		this.resultado = resultado;
 	}
-	
-	public String getResultadoMoneda() {
-        return resultadoMoneda.format(resultado);
-    }
+
 }
