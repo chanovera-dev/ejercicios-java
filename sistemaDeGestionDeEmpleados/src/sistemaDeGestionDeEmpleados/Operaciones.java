@@ -1,5 +1,6 @@
 package sistemaDeGestionDeEmpleados;
 
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ public class Operaciones {
     private HashMap<String, Integer> edades;
     private HashMap<String, Double> salarios;
     private NumberFormat formatoMoneda;
+    DecimalFormat decimalFormat;
     private String empleadoContratado;
     private int edadEmpleado;
     private double salarioEmpleado;
@@ -30,6 +32,7 @@ public class Operaciones {
 		this.edades = new HashMap<>();
 		this.salarios = new HashMap<>();
 		this.formatoMoneda = NumberFormat.getCurrencyInstance(Locale.getDefault());
+		this.decimalFormat = new DecimalFormat("#.##########");
 		this.empleadoContratado = empleadoContratado;
 		this.edadEmpleado = edadEmpleado;
 		this.salarioEmpleado = salarioEmpleado;

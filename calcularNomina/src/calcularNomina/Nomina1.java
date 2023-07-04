@@ -8,7 +8,7 @@ public class Nomina1 {
 	Scanner input = new Scanner(System.in);
 	
 	double horasNomina = 0, horasExtras = 0, nominaNormal = 0, nominaExtra = 0, nomina = 0, pagoHoraNomina = 72.87, pagoHoraExtra = 72.87, impuestos = 0, nominaNeta = 0;
-	private DecimalFormat nominaNetaDecimal, impuestosDecimal, nominaDecimal, horasNominaDecimal, horasExtrasDecimal;
+	private DecimalFormat nominaNetaMoneda, impuestosDecimal, nominaMoneda, horasNominaDecimal, horasExtrasDecimal;
 	 
 	public void obtenerDatos() {
 		Nomina1 datosNomina = new Nomina1();
@@ -23,11 +23,11 @@ public class Nomina1 {
 	}
 
 	public void operaciones() {
-		nominaNetaDecimal = new DecimalFormat("#,##0.00");
+		nominaNetaMoneda = new DecimalFormat("#,##0.00"); // este es formato de moneda
 		impuestosDecimal = new DecimalFormat("#,##0.00");
-		nominaDecimal = new DecimalFormat("#,##0.00");
-		horasNominaDecimal = new DecimalFormat("#.##########");
-		horasExtrasDecimal = new DecimalFormat("#.##########");
+		nominaMoneda = new DecimalFormat("#,##0.00");
+		horasNominaDecimal = new DecimalFormat("#.##########"); // formato de referencia
+		horasExtrasDecimal = new DecimalFormat("#.##########"); // borra el .0 en el double
 		Nomina1 datosNomina = new Nomina1();
 		
 		nominaNormal = horasNomina * pagoHoraNomina;
@@ -52,8 +52,8 @@ public class Nomina1 {
 		return horasNomina;
 	}
 	
-	public String getHorasNominaDecimal() {
-        return horasNominaDecimal.format(horasNomina);
+	public String getHorasNominaDecimal() {					// convierte el número double
+        return horasNominaDecimal.format(horasNomina);		// al formato indicado en la clase
     }
 	
 	public double getHorasExtras() {
@@ -69,7 +69,7 @@ public class Nomina1 {
 	}
 	
 	public String getNominaMoneda() {
-        return nominaDecimal.format(nomina);
+        return nominaMoneda.format(nomina);
     }
 	
 	public double getImpuestos() {
@@ -85,7 +85,7 @@ public class Nomina1 {
 	}
 	
 	public String getNominaNetaMoneda() {
-        return nominaNetaDecimal.format(nominaNeta);
+        return nominaNetaMoneda.format(nominaNeta);
     }
 	
 	// método set

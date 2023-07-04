@@ -1,13 +1,3 @@
-/*
- * Calcular nómina, ingresar el nombre y puesto del empleado
- * ingresar sus horas de trabajo, se le debe de pagar 72.87
- * ingresar su tiempo extra y se va a pagar 25.96 la hora
- * mostrar el sueldo bruto
- * Si el sueldo bruto es inferior a 2000 hacer un descuento de 16% de impuestos
- * Si es mayor a 2000 aplicar un 18%
- * Mostrar el sueldo neto
- * 
- */
 package calcularNomina;
 
 public class CalcularNomina {
