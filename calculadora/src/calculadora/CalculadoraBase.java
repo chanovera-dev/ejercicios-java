@@ -71,8 +71,8 @@ public class CalculadoraBase extends JFrame implements ActionListener {
             campoNumeros.setText(campoNumeros.getText() + contenidoBoton);
         } else if (contenidoBoton.matches("[+\\-x÷]")) { // si el botón es un operando almacena el número actual y la operación
             double numero = Double.parseDouble(campoNumeros.getText());
-            numeros.add(numero);
-            operaciones.add(contenidoBoton);
+            numeros.add(numero); // se agrega a la lista de numeros
+            operaciones.add(contenidoBoton); // se agrega a la lista de operaciones
             campoNumeros.setText("");
         } else if (contenidoBoton.equals("=")) { // si es el símbolo "=", realiza todas las operaciones y muestra el resultado
             double numero = Double.parseDouble(campoNumeros.getText());
