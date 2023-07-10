@@ -1,4 +1,4 @@
-package CardGame; 
+package CardGame;
 
 import java.util.HashSet;
 import java.util.List;
@@ -11,6 +11,10 @@ public class CardGame {
     private Set<Card> cards; 
     private List<Player> players; 
     
+    public List<Player> getPlayers() {
+        return players;
+    }
+    
     public CardGame() {
         cards = new HashSet<>(); //conjunto de cartas
         players = new ArrayList<>(); // lista de jugadores
@@ -21,11 +25,11 @@ public class CardGame {
     }
     
     public void shuffleCards() { // mezcla las cartas
-    	/*
-    	 Primero se copian las cartas en una lista, 
-    	 se mezcla esa lista utilizando Collections.shuffle, 
-    	 y luego se crea un nuevo conjunto de cartas a partir de la lista mezclada. 
-    	 */
+        /*
+         Primero se copian las cartas en una lista, 
+         se mezcla esa lista utilizando Collections.shuffle, 
+         y luego se crea un nuevo conjunto de cartas a partir de la lista mezclada. 
+         */
         List<Card> shuffledCards = new ArrayList<>(cards);
         Collections.shuffle(shuffledCards);
         cards = new HashSet<>(shuffledCards);
@@ -57,6 +61,7 @@ public class CardGame {
             System.out.println();
         }
     }
+    
     
     public static void main(String[] args) {
         CardGame game = new CardGame();
@@ -134,4 +139,5 @@ class Player {
     public List<Card> getCards() {
         return cards;
     }
+   
 }
