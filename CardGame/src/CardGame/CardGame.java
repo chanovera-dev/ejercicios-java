@@ -49,10 +49,10 @@ public class CardGame {
     
     public void displayCards() { // muestra las cartas repartidas a cada jugador
         for (Player player : players) {
-            System.out.println("Player: " + player.getName());
+            System.out.println(player.getName());
             List<Card> playerCards = player.getCards();
             for (Card card : playerCards) {
-                System.out.println("Card: " + card.getSuit() + " " + card.getValue());
+                System.out.println(card.getValue() + " de " + card.getSuit() + ".");
             }
             System.out.println();
         }
@@ -78,10 +78,11 @@ public class CardGame {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese la cantidad de jugadores: ");
         int numPlayers = scanner.nextInt();
+        System.out.println();
         
         // Crear jugadores
         for (int i = 1; i <= numPlayers; i++) {
-            game.addPlayer(new Player("Jugador " + i));
+            game.addPlayer(new Player("Jugador " + i + ":"));
         }
         
         // Repartir cartas
