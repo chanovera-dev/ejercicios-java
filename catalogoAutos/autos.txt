@@ -1,0 +1,10 @@
+Ford,Territory,2023,SUV,imagenes/ROJO-RUBI.png,Rojo,589000
+Nissan,T-Cross,2023,SUV,imagenes/tcross2023.png,Blanco,427504
+Volkswagen,Taigun,2023,SUV,imagenes/plata-reflex.png,Plata,420990
+Toyota,Corolla Cross,2023,SUV,imagenes/cross_bucket2.png,Plata,514900
+Nissan,Kicks,2023,SUV,imagenes/nissan-kiss.png,Naranja,608900
+Volkswagen,Beetle,1965,Sedán,imagenes/4fgg1vvp.jpg,Azúl turquesa,165001
+Mitsubishi,Mirage G4,2023,Sedán,imagenes/mitsubishi-mirage.png,Rojo,270301
+Peugeot,301,2023,Sedán,imagenes/peugeot-301-01.jpg,Gris,299700
+KIA,Forte,2023,Sedán,imagenes/kia-forte.png,Negro,375900
+Nissan,Sentra,2023,Sedán,imagenes/20Nissan_Sentra_SV_Jellybean_RosewoodMetallic.png,Rojo,383900
