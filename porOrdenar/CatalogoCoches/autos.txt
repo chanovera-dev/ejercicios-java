@@ -1,0 +1,6 @@
+Toyota Camry,Sedán,imagenes/toyota_camry.jpg,rojo
+Ford Explorer,SUV,imagenes/ford_explorer.jpg,azul
+Honda Civic,Sedán,imagenes/honda_civic.jpg,Blanco
+Ford Fiesta,Sedán,imagenes/toyota_camry.jpg,Blanco
+Cristian,Deportivo,imagenes/avatar-06-2023.png,Rojo
+Cristian2,Deportivo,imagenes/avatar-06-2023.png,Blanco

@@ -27,7 +27,7 @@ public class CardGameGUI extends JFrame {
     private JTextField numPlayersField;
     private JButton startButton;
     private JPanel cardPanel;
-    private List<JPanel> playerPanels; // Lista de paneles para mostrar las cargas de cada jugador
+    private List<JPanel> playerPanels; // Lista de paneles para mostrar las cartas de cada jugador
 
     public CardGameGUI() {
         setTitle("Card Game");
