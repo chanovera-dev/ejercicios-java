@@ -45,7 +45,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
     private JButton botonAgregarAuto;
     private JTextField campoFiltrado;
     private JPanel panelAutos;
-    private List<Auto> autos;
+    private List<AbstractAuto> autos;
 
     private static final long serialVersionUID = 1L;
 
@@ -200,7 +200,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
             String color = campoColor.getText();
             String precio = campoPrecio.getText();
 
-            Auto auto = new Sedan(marca, nombre, year, tipo, imagen, color, precio);
+            AbstractAuto auto = new Sedan(marca, nombre, year, tipo, imagen, color, precio);
 
             autos.add(auto);
 
@@ -209,14 +209,13 @@ public class CatalogoAutos extends JFrame implements ActionListener {
             mostrarAutos();
         }
     }
-
-
+    
     public void mostrarAutos() {
         panelAutos.removeAll();
 
         panelAutos.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 15));
 
-        for (Auto auto : autos) {
+        for (AbstractAuto auto : autos) {
             String nombre = auto.getNombre().toUpperCase();
             String imagen = auto.getImagen();
 
@@ -294,7 +293,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
         panelAutos.repaint();
     }
 
-    public void mostrarDetallesAuto(Auto auto) {
+    public void mostrarDetallesAuto(AbstractAuto auto) {
         // obtiene el precio y lo convierte a formato moneda
         NumberFormat formatoMoneda = NumberFormat.getCurrencyInstance();
         String precioFormateado = formatoMoneda.format(Double.parseDouble(auto.getPrecio()));
@@ -347,7 +346,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
         dialog.setVisible(true);
     }
 
-    public void editarAuto(Auto auto) {
+    public void editarAuto(AbstractAuto auto) {
         // Crear el formulario de edición
         JPanel formularioEdicion = new JPanel(new GridLayout(0, 1, 0, 0));
 
@@ -457,11 +456,11 @@ public class CatalogoAutos extends JFrame implements ActionListener {
         }
     }
 
-    public void borrarAuto(Auto auto) {}
+    public void borrarAuto(AbstractAuto auto) {}
     
     public void guardarAutos() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("autos.txt"))) {
-            for (Auto auto : autos) {
+            for (AbstractAuto auto : autos) {
                 writer.write(auto.getMarca() + "," + auto.getNombre() + "," + auto.getYear() + "," + auto.getTipo() + "," + auto.getImagen() + "," + auto.getColor() + "," + auto.getPrecio());
                 writer.newLine();
             }
@@ -485,7 +484,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
                     String color = datos[5];
                     String precio = datos[6];
 
-                    Auto auto = new Sedan(marca, nombre, year, tipo, imagen, color, precio);
+                    AbstractAuto auto = new Sedan(marca, nombre, year, tipo, imagen, color, precio);
                     autos.add(auto);
                 }
             }
@@ -508,7 +507,7 @@ public class CatalogoAutos extends JFrame implements ActionListener {
         } else {
             panelAutos.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 15));
 
-            for (Auto auto : autos) {
+            for (AbstractAuto auto : autos) {
             	
             	String nombre = auto.getNombre().toUpperCase();
             	String marcaAuto = auto.getMarca().toUpperCase();

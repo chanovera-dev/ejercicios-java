@@ -1,6 +1,6 @@
 package catalogoAutos;
 
-public abstract class Auto {
+public abstract class AbstractAuto {
 
 	private String marca;
 	private String nombre;
@@ -10,7 +10,7 @@ public abstract class Auto {
 	private String color;
 	private String precio;
 
-	public Auto(String marca, String nombre, String year, String tipo, String imagen, String color, String precio) {
+	public AbstractAuto(String marca, String nombre, String year, String tipo, String imagen, String color, String precio) {
 		this.marca = marca;
 		this.nombre = nombre;
 		this.year = year;
@@ -70,7 +70,7 @@ public abstract class Auto {
 	
 }
 
-class Sedan extends Auto {
+class Sedan extends AbstractAuto {
 	
 	public Sedan(String marca, String nombre, String year, String tipo, String imagen, String color, String precio) {
 		super(marca, nombre, year, tipo, imagen, color, precio);
@@ -90,7 +90,7 @@ class Sedan extends Auto {
 	
 }
 
-class SUV extends Auto {
+class SUV extends AbstractAuto {
 	
 	public SUV(String marca, String nombre, String year, String tipo, String imagen, String color, String precio) {
 		super(marca, nombre, year, tipo, imagen, color, precio);
@@ -110,7 +110,7 @@ class SUV extends Auto {
 	
 }
 
-class Deportivo extends Auto {
+class Deportivo extends AbstractAuto {
 	
 	public Deportivo(String marca, String nombre, String year, String tipo, String imagen, String color, String precio) {
 		super(marca, nombre, year, tipo, imagen, color, precio);

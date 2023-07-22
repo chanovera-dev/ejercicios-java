@@ -1,4 +1,4 @@
-Ford,Territory,2023,SUV,imagenes/ROJO-RUBI.png,Rojo,589000
+Ford,Territory,2023,SUV,imagenes/ROJO-RUBI.png,Rojo,589001
 Nissan,T-Cross,2023,SUV,imagenes/tcross2023.png,Blanco,427504
 Volkswagen,Taigun,2023,SUV,imagenes/plata-reflex.png,Plata,420990
 Toyota,Corolla Cross,2023,SUV,imagenes/cross_bucket2.png,Plata,514901
