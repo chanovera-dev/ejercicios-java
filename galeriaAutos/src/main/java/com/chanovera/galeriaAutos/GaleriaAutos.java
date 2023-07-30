@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.sql.Connection;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -21,8 +22,10 @@ import javax.swing.JTextField;
 
 public class GaleriaAutos extends JFrame  implements ActionListener {
 	
+	private Connection conexion;
+	
 	private JButton botonAgregarAuto;
-    private JTextField campoFiltrado;
+    //private JTextField campoFiltrado;
 
 	private static final long serialVersionUID = 1L;
 
@@ -32,20 +35,25 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				ConexionBD conexionBD = new ConexionBD();
 				try {
-					GaleriaAutos frame = new GaleriaAutos();
+					
+					GaleriaAutos frame = new GaleriaAutos(conexionBD.getConexion());
+					conexionBD.crearTablas(conexionBD.getConexion());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
+
 		});
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public GaleriaAutos() {
+	public GaleriaAutos(Connection conexion) {
+		this.conexion = conexion;
 		
 		// ventana principal
         setTitle("Catálogo de autos");
