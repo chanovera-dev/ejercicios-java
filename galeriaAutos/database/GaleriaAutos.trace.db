@@ -1,0 +1,4 @@
+2023-07-30 12:36:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "SHOW TABLES LIKE[*] 'tipo'"
+Syntax error in SQL statement "SHOW TABLES LIKE[*] 'tipo'"; SQL statement:
+SHOW TABLES LIKE 'tipo' [42000-200]

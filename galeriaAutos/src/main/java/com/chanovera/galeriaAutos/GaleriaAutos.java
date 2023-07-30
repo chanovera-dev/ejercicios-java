@@ -3,6 +3,7 @@ package com.chanovera.galeriaAutos;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -18,6 +19,7 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
 	
 	private JButton botonAgregarAuto;
     //private JTextField campoFiltrado;
+	private JPanel panelAutos;
 
 	private static final long serialVersionUID = 1L;
 
@@ -65,6 +67,10 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
         panelControles.add(botonAgregarAuto); // lo agrega al panel de controles
 
         add(panelControles, BorderLayout.NORTH); // ubica este panel al norte de la ventana
+        
+     // panel de autos
+        panelAutos = new JPanel(new GridLayout(1, 0, 0, 15)); // inicializa un objeto JPanel para ubicar los autos a mostrar
+        getContentPane().add(panelAutos, BorderLayout.CENTER); // lo establece al centro de todo para que ocupe todo el espacio disponible
 		
 	}
 
