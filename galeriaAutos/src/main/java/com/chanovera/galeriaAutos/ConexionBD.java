@@ -2,6 +2,8 @@ package com.chanovera.galeriaAutos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -83,4 +85,84 @@ public class ConexionBD {
 	    }
 		
 	}
+    
+    public void insertarAuto(String marca, String nombre, int year, int tipoId, int colorId, double precio) {
+        String consulta = "INSERT INTO autos (marca, nombre, year, tipo, color, precio) VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, marca);
+            pstmt.setString(2, nombre);
+            pstmt.setInt(3, year);
+            pstmt.setInt(4, tipoId);
+            pstmt.setInt(5, colorId);
+            pstmt.setDouble(6, precio);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se puede insertar el auto", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public void insertarTipo(String tipo) {
+        String consulta = "INSERT INTO tipo (tipo) VALUES (?)";
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, tipo);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se puede insertar el tipo", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    public void insertarColor(String color) {
+        String consulta = "INSERT INTO color (color) VALUES (?)";
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, color);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se puede insertar el color", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    
+    public Integer obtenerColorId(String color) {
+        // Comprobar si el color existe en la tabla "color"
+        String consulta = "SELECT id FROM color WHERE color = ?";
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, color);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // El color ya existe, devolver su ID
+                    return rs.getInt("id");
+                } else {
+                    // El color no existe
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se puede obtener el ID del color", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
+
+    public Integer obtenerTipoId(String tipo) {
+        // Comprobar si el tipo existe en la tabla "tipo"
+        String consulta = "SELECT id FROM tipo WHERE tipo = ?";
+        try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
+            pstmt.setString(1, tipo);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    // El tipo ya existe, devolver su ID
+                    return rs.getInt("id");
+                } else {
+                    // El tipo no existe
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "No se puede obtener el ID del tipo", "Error", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
 }
