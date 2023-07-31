@@ -19,7 +19,7 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
 	
 	private JButton botonAgregarAuto;
     //private JTextField campoFiltrado;
-	private JPanel panelAutos;
+	public static JPanel panelAutos;
 
 	private static final long serialVersionUID = 1L;
 
@@ -51,10 +51,10 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
 		// ventana principal
         setTitle("Catálogo de autos");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra la aplicación desde los controles de la ventana
-        setSize(960, 960); // establece el tamaño de la ventana
+        setSize(980, 960); // establece el tamaño de la ventana
         setLayout(new BorderLayout()); // establece el administrador de diseño en un BorderLayout
         
-     // panel de controles
+        // panel de controles
         JPanel panelControles = new JPanel(); // crea e inicializa un objeto JPanel para ubicar los controles
         panelControles.setLayout(new FlowLayout(FlowLayout.RIGHT)); // alínea los objetos dentro de sí a la izquierda
 
@@ -68,10 +68,11 @@ public class GaleriaAutos extends JFrame  implements ActionListener {
 
         add(panelControles, BorderLayout.NORTH); // ubica este panel al norte de la ventana
         
-     // panel de autos
+        // panel de autos
         panelAutos = new JPanel(new GridLayout(1, 0, 0, 15)); // inicializa un objeto JPanel para ubicar los autos a mostrar
         getContentPane().add(panelAutos, BorderLayout.CENTER); // lo establece al centro de todo para que ocupe todo el espacio disponible
-		
+        // Mostrar los autos en el panel
+        Operacion.mostrarAutos(this.conexion, GaleriaAutos.panelAutos);
 	}
 
 	@Override

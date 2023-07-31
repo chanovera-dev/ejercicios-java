@@ -72,6 +72,7 @@ public class ConexionBD {
 	                    + "nombre VARCHAR(50),"
 	                    + "year INT,"
 	                    + "tipo INT,"
+	                    + "imagen VARCHAR(100),"
 	                    + "color INT,"
 	                    + "precio DECIMAL(9, 2),"
 	                    + "FOREIGN KEY (tipo) REFERENCES tipo(id),"
@@ -86,15 +87,16 @@ public class ConexionBD {
 		
 	}
     
-    public void insertarAuto(String marca, String nombre, int year, int tipoId, int colorId, double precio) {
-        String consulta = "INSERT INTO autos (marca, nombre, year, tipo, color, precio) VALUES (?, ?, ?, ?, ?, ?)";
+    public void insertarAuto(String marca, String nombre, int year, int tipoId, String imagen, int colorId, double precio) {
+        String consulta = "INSERT INTO autos (marca, nombre, year, tipo, imagen, color, precio) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = conexion.prepareStatement(consulta)) {
             pstmt.setString(1, marca);
             pstmt.setString(2, nombre);
             pstmt.setInt(3, year);
             pstmt.setInt(4, tipoId);
-            pstmt.setInt(5, colorId);
-            pstmt.setDouble(6, precio);
+            pstmt.setString(5, imagen);
+            pstmt.setInt(6, colorId);
+            pstmt.setDouble(7, precio);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
